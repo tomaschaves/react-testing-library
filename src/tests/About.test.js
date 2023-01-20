@@ -16,4 +16,12 @@ describe('Teste o componente <App.js />', () => {
     const src = screen.getByRole('img');
     expect(src.src).toBe(image);
   });
+  it('Teste se a página contém dois parágrafos com texto sobre a Pokédex', () => {
+    renderWithRouter(<About />);
+    const paragraphs = [
+      'This application simulates a Pokédex, a digital encyclopedia containing all Pokémon',
+      'One can filter Pokémon by type, and see more details for each one of them'];
+    expect(screen.getByText(paragraphs[0])).toBeInTheDocument();
+    expect(screen.getByText(paragraphs[1])).toBeInTheDocument();
+  });
 });
