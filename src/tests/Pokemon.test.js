@@ -44,7 +44,7 @@ describe('Teste o componente <Pokemon.js />', () => {
     const favorite = screen.getByRole('checkbox', { name: /pokémon favoritado\?/i });
     expect(favorite).toBeInTheDocument();
     userEvent.click(favorite);
-    const star = screen.queryByRole('img', { name: /Pikachu is marked as favorite/i});
+    const star = screen.queryByRole('img', { name: /Pikachu is marked as favorite/i });
     expect(favorite.checked).toBeTruthy();
     expect(star).toBeInTheDocument();
     expect(star.src.includes('/star-icon.svg')).toBeTruthy();
